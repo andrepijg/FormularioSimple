@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+// import { Fragment } from 'react'; y se coloca en vez del div principal la etiqueta <Fragment /> o también solo así <> </>
+import FormSignUp from './components/FormSignUp';
+import { Container,Typography } from '@mui/material';
 
 function App() {
+
+  const handleSubmit = (valores) => {
+    console.log("APPJS", valores);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container component="section" maxWidth="md">
+    <Typography variant='h4' align='center' component="h1">Formulario de Registro</Typography>
+      <FormSignUp handleSubmit={handleSubmit}/>
+      
+    </Container>
   );
 }
 
